@@ -5,25 +5,16 @@
     width: 66%; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0 auto;
-       
-    
 }
-
-
 
 .task-complete {
     font-style: italic;
-
 }
-
-
 
 .btn-Delete {
     float: right;
 }
 
-
 .btn-Complete {
     float: right;
-
 }
