@@ -7,14 +7,6 @@
     margin: 0 auto;
 }
 
-.task-complete {
-    font-style: italic;
-}
-
 .btn-Delete {
-    float: right;
-}
-
-.btn-Complete {
     float: right;
 }
