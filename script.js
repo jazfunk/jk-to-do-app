@@ -62,4 +62,6 @@ function saveLocalTaskList(taskList) {
 
 function getLocalTaskList() {
   savedTasks = JSON.parse(window.localStorage.getItem("task"));  
+  //document.getElementById('task').innerHTML = savedTasks;
+
 }
