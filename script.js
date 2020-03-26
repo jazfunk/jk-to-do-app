@@ -1,17 +1,45 @@
 
-var savedTasks = new Object();
-
+var newTask = null;
 document.getElementById("addBtnID").addEventListener("click", addTODO);
 var taskList = document.getElementById("tasks");
 taskList.addEventListener("click", modTODO);
 
+var savedTasks = window.localStorage.getItem("tasks")
+  ? JSON.parse(window.localStorage.getItem("tasks"))
+  : [];
+window.localStorage.setItem("tasks", JSON.stringify(savedTasks));
+var localTasks = JSON.parse(window.localStorage.getItem("tasks"));
+
+function clearTaskListUI() {
+  while (taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild);
+  }
+}
+
+
+var button = document.getElementById("clear-local-btn");
+button.addEventListener("click", function() {
+  if (confirm("This will delete all tasks, Are you sure?")) {
+    // clearTaskListUI;
+    window.localStorage.clear();
+    console.log(window.localStorage);  
+    while (taskList.firstChild) {
+      taskList.removeChild(taskList.firstChild);
+    }  
+  }
+})
+
 window.onload = function() {
-  this.browserSupport();
-  this.getLocalTaskList();
+  browserSupport();
+  getLocalTaskList();
 };
 
-function addTODO(e) {
-  var newTask = document.getElementById("taskDescription").value;
+
+
+function addTODO() {  
+  if(newTask === null) {
+    newTask = document.getElementById('task-description').value;
+  }
   if (newTask !== "") {
     var li = document.createElement("li");
     li.className = "task-list-item";
@@ -21,9 +49,14 @@ function addTODO(e) {
     delBtn.appendChild(document.createTextNode("Delete"));
     li.appendChild(delBtn);
     taskList.appendChild(li);
-    saveLocalTaskList(taskList);
+
+    savedTasks.push(newTask);
+    window.localStorage.setItem("tasks", JSON.stringify(savedTasks));
+    console.log(localStorage);
+    //getLocalTaskList();
   } else {
-    alert("You cannot add an empty task.");
+    //alert("You cannot add an empty task.");
+    console.log('You cannot add an empty task.');
   }
 }
 
@@ -56,12 +89,17 @@ function browserSupport() {
   }
 }
 
-function saveLocalTaskList(taskList) {
-  window.localStorage.setItem("task", JSON.stringify(taskList));  
-}
+// function updateTaskList() {
+//   for (task in savedTasks) {
+    
+//   }
+// }
+
 
 function getLocalTaskList() {
-  savedTasks = JSON.parse(window.localStorage.getItem("task"));  
-  //document.getElementById('task').innerHTML = savedTasks;
-
+  
+  for (task in localTasks) {
+    newTask = localTasks[task];
+    addTODO();    
+  }
 }
