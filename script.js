@@ -1,75 +1,69 @@
 
-var newTask = null;
-document.getElementById("addBtnID").addEventListener("click", addTODO);
-var taskList = document.getElementById("tasks");
+let savedTasks = [];
+let taskList = document.getElementById("tasks");
 taskList.addEventListener("click", modTODO);
 
-var savedTasks = window.localStorage.getItem("tasks")
-  ? JSON.parse(window.localStorage.getItem("tasks"))
-  : [];
-window.localStorage.setItem("tasks", JSON.stringify(savedTasks));
-var localTasks = JSON.parse(window.localStorage.getItem("tasks"));
-
-function clearTaskListUI() {
-  while (taskList.firstChild) {
-    taskList.removeChild(taskList.firstChild);
-  }
-}
-
-
-var button = document.getElementById("clear-local-btn");
-button.addEventListener("click", function() {
-  if (confirm("This will delete all tasks, Are you sure?")) {
-    // clearTaskListUI;
-    window.localStorage.clear();
-    console.log(window.localStorage);  
-    while (taskList.firstChild) {
-      taskList.removeChild(taskList.firstChild);
-    }  
-  }
-})
-
 window.onload = function() {
+  document
+    .getElementById("add-btn-id")
+    .addEventListener("click", function() {
+      addTODO(document.getElementById("task-description").value);
+    });
+  document
+    .getElementById("clear-local-btn")
+    .addEventListener("click", function() {
+      if (confirm("This will clear all listed and locally saved tasks, Are you sure?")) {
+        document.getElementById("task-description").value = "";
+        document.getElementById("task-description").focus();
+        window.localStorage.clear();
+        savedTasks.length = 0;
+        while (taskList.firstChild) {
+          taskList.removeChild(taskList.firstChild);
+        }        
+      }
+    });
   browserSupport();
-  getLocalTaskList();
+  getLocalTaskList();  
 };
 
-
-
-function addTODO() {  
-  if(newTask === null) {
-    newTask = document.getElementById('task-description').value;
+function updateLocal(task) {
+  if (task != "removed-item") {
+    savedTasks.push(task);
   }
-  if (newTask !== "") {
+  window.localStorage.setItem("tasks", JSON.stringify(savedTasks));
+}
+
+function addTODO(task) {
+  if (task !== "") {
     var li = document.createElement("li");
     li.className = "task-list-item";
-    li.appendChild(document.createTextNode(newTask));
-    var delBtn = document.createElement("button");
-    delBtn.className = "btn-Delete";
-    delBtn.appendChild(document.createTextNode("Delete"));
-    li.appendChild(delBtn);
+    li.appendChild(document.createTextNode(task));
+    var deletebutton = document.createElement("button");
+    deletebutton.className = "btn-delete";
+    deletebutton.appendChild(document.createTextNode("Delete"));
+    li.appendChild(deletebutton);
     taskList.appendChild(li);
-
-    savedTasks.push(newTask);
-    window.localStorage.setItem("tasks", JSON.stringify(savedTasks));
-    console.log(localStorage);
-    //getLocalTaskList();
+    updateLocal(task);
+    document.getElementById("task-description").value = "";
+    document.getElementById("task-description").focus();
   } else {
-    //alert("You cannot add an empty task.");
-    console.log('You cannot add an empty task.');
+    alert("You cannot add an empty task.");
   }
 }
 
 function modTODO(e) {
-  if (e.target.className === "btn-Delete") {
+  if (e.target.className === "btn-delete") {
     var li = e.target.parentElement;
     if (li.style.textDecoration === "line-through") {
+      // Get innerText from <li> minus delete button text and preceding space character
+      var task = li.innerText.substring(0, li.innerText.length - 7);
+      removeLocalTask(task);
       taskList.removeChild(li);
+      document.getElementById('task-description').focus();
     } else {
       alert("Cannot DELETE, task is not marked COMPLETE.");
     }
   } else {
-    var textToStrike = e.target.innerText;
     if (e.target.style.textDecoration !== "line-through") {
       e.target.style.textDecoration = "line-through";
     } else {
@@ -80,26 +74,28 @@ function modTODO(e) {
 
 function browserSupport() {
   if (typeof Storage !== "undefined") {
-    // Code for localStorage
+    // localStorage supported
   } else {
-    // No web storage Support.
-    alert(
-      "Your browser does not support local storage.  Cannot save your tasks."
-    );
+    alert("Your browser does not support local storage.");
+  }
+  document.getElementById("task-description").focus();
+}
+
+function removeLocalTask(task) {
+  const index = savedTasks.indexOf(task);
+  if (index > -1) {
+    savedTasks.splice(index, 1);
+    updateLocal("removed-item");
   }
 }
 
-// function updateTaskList() {
-//   for (task in savedTasks) {
-    
-//   }
-// }
-
-
 function getLocalTaskList() {
-  
-  for (task in localTasks) {
-    newTask = localTasks[task];
-    addTODO();    
-  }
+  var localTasks = JSON.parse(window.localStorage.getItem("tasks"));
+  if (localTasks != null) {
+    for (task in localTasks) {
+      addTODO(localTasks[task]);
+    }
+  } else {
+    console.log("localStorage is empty");
+  }  
 }

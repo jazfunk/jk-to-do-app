@@ -7,27 +7,29 @@
 </head>
 
 <body>
-    <table class="mainTable">
+    <table class="main-table">
         <tr>
-            <td class="pageTitle">
+            <td class="page-title">
                 <h1>To-Do App</h1>
                 <h2>by Jeff King</h2>
             </td>
         </tr>
         <tr>
-            <td class="pageTitle">
-                Task Description:
-                <input type="text" id="task-description" class="inputTextbox">
-                <input type="submit" value="Add" id="addBtnID">
-                <input type="submit" value="Clear Local" id="clear-local-btn";
+            <td class="page-title">
+                Task Description:            
+                <input type="text" id="task-description" class="input-textbox">
+                <input type="submit" value="Add Task" id="add-btn-id">            
             </td>
         </tr>
         <tr>
             <td class="task-list">                
                 <ul id="tasks"></ul>
-                <h4>Click Task Description to mark COMPLETE.</h4>
-            </td>
-        </tr>        
+                <h4>
+                    Click Task Description to mark COMPLETE.
+                    <input type="submit" value="Clear All Tasks" id="clear-local-btn">
+                </h4>                
+            </td>            
+        </tr>            
     </table>
     <h3>Software Development Mastermind</h3>
     <script src="script.js"></script>
