@@ -44,11 +44,11 @@ function addTODO(task) {
     li.appendChild(deletebutton);
     taskList.appendChild(li);
     updateLocal(task);
-    document.getElementById("task-description").value = "";
-    document.getElementById("task-description").focus();
+    document.getElementById("task-description").value = "";    
   } else {
     alert("You cannot add an empty task.");
   }
+  document.getElementById("task-description").focus();
 }
 
 function modTODO(e) {
