@@ -5,6 +5,16 @@ Written entirely in pure JavaScript, HTML, and CSS, an app to create a list of t
 [View Application](https://jazfunk.github.io/jk-to-do-app/)  
 [View Repository](https://github.com/jazfunk/jk-to-do-app.git)
 
+## Instructions
+- Enter task description in text box  
+- Click "Add Task" to add to list  
+- Click description to mark complete
+- Click "Delete" button to delete a completed item  
+- Items not marked complete cannot be deleted.  
+- All items will be saved locally, and avaialbe the next time you open the page  
+- To clear all items listed and saved locally, click "Clear All Tasks"
+
+
 ## Application Images
 
 * **No List Items**<br>
