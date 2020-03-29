@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0px;
-    /* background-color: #f4f4f4; */
 }
 head {
     margin: 0;
@@ -41,22 +40,20 @@ h4 {
     color: #555555;
     margin: 0;
     text-align: center;
-    padding-bottom: 8px;    
-    /* padding: 0px; */
+    padding-bottom: 8px;
 }
 h5 {
     font-size: 22px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: darkgreen;
+    color: darkslategray;
     margin: 0;
     padding: 6px 6px;
-    /* padding: 0px; */
     text-align: center;   
 }
 ul {
     list-style-type: none;   
-    padding-left: 0px; 
-    /* padding: 0px; */
+    margin-top: 0px;
+    padding: 0px;
 }
 li {
     padding: 5px;

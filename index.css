@@ -1,5 +1,5 @@
 .task-list {   
-    border: 1px solid #f4f4f4;
+    border: 1px solid #dddddd;
     display: flex; 
     flex-direction: column; 
     flex-wrap: nowrap;
@@ -10,13 +10,4 @@
 
 .btn-delete {
     float: right;
-}
-.test {
-    font-size: 18px;
-    color: bisque;
-    background-color: blue;
-}
-table {
-    padding: 0px;
-    margin: 0;
 }
