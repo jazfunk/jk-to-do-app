@@ -3,8 +3,34 @@
 
 <head>
     <link rel="stylesheet" href="basic.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">   
 </head>
+
+<!-- 
+<header>    
+    <!-- <table class="main-table">
+        <tr>
+            <td class="page-title">
+                <h1>To-Do App</h1>
+                <h2>by Jeff King</h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="page-title">
+                <form>
+                    Task Description:&nbsp;&nbsp;
+                    <input type="text" id="task-description" class="input-textbox">
+                    <input type="submit" value="Add Task" id="add-btn-id">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td class="page-title">
+                <h5><span id="system-message"></span></h5>
+            </td>
+        </tr>
+    </table> 
+</header> -->
 
 <body>
     <table class="main-table">
@@ -16,20 +42,30 @@
         </tr>
         <tr>
             <td class="page-title">
-                Task Description:            
-                <input type="text" id="task-description" class="input-textbox">
-                <input type="submit" value="Add Task" id="add-btn-id">            
+                <form>
+                    Task Description:&nbsp;&nbsp;
+                    <input type="text" id="task-description" class="input-textbox">
+                    <input type="submit" value="Add Task" id="add-btn-id">
+                </form>
             </td>
         </tr>
         <tr>
-            <td class="task-list">                
+            <td class="page-title">
+                <h5><span id="system-message"></span></h5>
+            </td>
+        </tr>
+        <tr>
+            <td class="task-list">
                 <ul id="tasks"></ul>
                 <h4>
                     Click Task Description to mark COMPLETE.
+                </h4>
+                <h4>
                     <input type="submit" value="Clear All Tasks" id="clear-local-btn">
-                </h4>                
-            </td>            
-        </tr>            
+                </h4>
+            </td>
+            <br>
+        </tr>
     </table>
     <h3>Software Development Mastermind</h3>
     <script src="script.js"></script>

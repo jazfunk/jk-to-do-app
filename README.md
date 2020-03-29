@@ -6,13 +6,18 @@ Written entirely in pure JavaScript, HTML, and CSS, an app to create a list of t
 [View Repository](https://github.com/jazfunk/jk-to-do-app.git)
 
 ## Instructions
-- Enter task description in text box  
-- Click "Add Task" to add to list  
-- Click description to mark complete
-- Click "Delete" button to delete a completed item  
+- Enter task description in text box.  
+- Click "Add Task", or press the ENTER key to add to list.  
+- Click anywhere in the description to mark complete.  
+- Completed items will change to text decoration to "line-through" (Strike Through).  
+"COMPLETED: " will be affixed to the beginning of the task description.  
+- Click anywhere in the description to toggle completion.
+- Click "Delete" button to delete a completed item.  
 - Items not marked complete cannot be deleted.  
-- All items will be saved locally, and avaialbe the next time you open the page  
-- To clear all items listed and saved locally, click "Clear All Tasks"
+- All items will be saved locally.  
+- Subsequent visits show most recent activity at the bottom of the list. 
+- To clear all items listed and saved locally, click "Clear All Tasks".  
+- The last user action committed is displayed in the system message area above the to-do list.
 
 
 ## Application Images
