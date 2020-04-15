@@ -7,11 +7,11 @@ Written entirely in pure JavaScript, HTML, and CSS, an app to create a list of t
 
 ## Application Images
 
-* **No List Items**<br>
+<!-- * **No List Items**<br>
 <img src="images/todoApp_SS_NoItems.png"><br>
 
 * **List items added**<br>
-<img src="images/todoApp_SS_WithItems.png"><br>
+<img src="images/todoApp_SS_WithItems.png"><br> -->
 
 <!-- 
 * **No List Items**<br>
