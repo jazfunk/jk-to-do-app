@@ -21,4 +21,4 @@ Seemingly a simple application to develop, the "To-Do" app was a challenging one
 
 ## Author
 
-- **Jeff King** - _Full Stack Software Developer_ - [GitHub](https://github.com/jazfunk) | [LinkedIn](https://www.linkedin.com/in/jeffking222/)
+- **Jeff King** - _Full Stack Software Developer_ - [GitHub](https://github.com/jazfunk) | [LinkedIn](https://www.linkedin.com/in/jeffking222/) | [Website](https://jeff-king.net)
