@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="basic.css">
-    <link rel="stylesheet" href="index.css">   
+  <head>
     <title>A Simple To-Do Application</title>
-</head>
+    <link rel="stylesheet" href="basic.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/svg" href="images/myFavIconOPTIMIZED.svg" />
+  </head>
 
-<body>
+  <body>
     <table class="main-table">
-        <tr>
-            <td class="page-title">
-                <h1>To-Do App</h1>
-            </td>
-        </tr>
-        <tr>
-            <td class="page-title">
-                <form>
-                    Task Description:
-                    <input id="task-description" type="text" class="input-textbox">
-                    <input id="add-btn-id" type="submit" value="Add Task">
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td class="page-title">
-                <h5><span id="system-message"></span></h5>
-            </td>
-        </tr>
-        <tr>
-            <td class="task-list">
-                <ul id="tasks"></ul>
-                <h4>
-                    Click Task Description to mark COMPLETE.
-                </h4>
-                <h4>
-                    <input id="clear-local-btn" type="submit" value="Clear All Tasks">
-                </h4>
-            </td>
-        </tr>
-    </table>
-    <!-- <h3>Software Development Mastermind</h3> -->
-    
-    <footer>
-        <div class="footer-table">
-          <h2>by Jeff King</h2>
+      <tr>
+        <td class="page-title">
+          <h1>To-Do App</h1>
+        </td>
+      </tr>
+      <tr>
+        <td class="page-title">
+          <form>
+            Task Description:
+            <input id="task-description" type="text" class="input-textbox" />
+            <input id="add-btn-id" type="submit" value="Add Task" />
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td class="page-title">
+          <h5><span id="system-message"></span></h5>
+        </td>
+      </tr>
+      <tr>
+        <td class="task-list">
+          <ul id="tasks"></ul>
           <h4>
-            <a href="https://github.com/jazfunk">GitHub</a>
-            |
-            <a href="https://www.linkedin.com/in/jeffking222/">LinkedIn</a>
-            |
-            <a href="https://www.jeff-king.net/">Website</a>
+            Click Task Description to mark COMPLETE.
           </h4>
-          <h3>Software Development Mastermind</h3>
-        </div>
-      </footer>
-  
-    <script src="script.js"></script>
-</body>
+          <h4>
+            <input id="clear-local-btn" type="submit" value="Clear All Tasks" />
+          </h4>
+        </td>
+      </tr>
+    </table>
 
+    <footer>
+      <div class="footer-table">
+        <img src="images/titleGraphicWithLogoOPTIMIZED.svg" alt="Jeff King" />
+        <h4>
+          <a href="https://github.com/jazfunk">GitHub</a>
+          |
+          <a href="https://www.linkedin.com/in/jeffking222/">LinkedIn</a>
+          |
+          <a href="https://www.jeff-king.net/">Website</a>
+        </h4>
+        <h3>Software Development Mastermind</h3>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
